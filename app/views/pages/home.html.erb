@@ -2,6 +2,9 @@
 
 <div ng-app="app">
   <div ng-controller="peopleCtrl">
-  {{ message }}
+    <div ng-repeat="person in people">
+      <h2>{{person.name}}</h2>
+      <p>{{person.bio}}</p>
+    </div>
   </div>
 </div>
