@@ -2,9 +2,25 @@
 
 <div ng-app="app">
   <div ng-controller="peopleCtrl">
+
+  <div>
+    <h4>Total number of people: {{ people.length }} </h4>
+  </div>
+
     <div ng-repeat="person in people">
-      <h2>{{person.name}}</h2>
-      <p>{{person.bio}}</p>
+      <h2 ng-click="toggleBio(person)">{{person.name}}</h2>
+      <p ng-if="person.bioVisible">{{person.bio}}</p>
+      <a href="#" ng-click="deletePerson($index)">Delete Person</a>
     </div>
+
+    <div>
+      Name: <input ng-model="personName" /><br />
+      Bio: <input ng-model="personBio" /><br />
+      <br />
+      <button ng-click="addPerson(personName, personBio)">Add Person</button>
+    </div>
+
+
+
   </div>
 </div>
